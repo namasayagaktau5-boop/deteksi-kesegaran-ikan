@@ -3,9 +3,9 @@ import streamlit as st
 from cnn_model import build_cnn_model, prediksi_citra_asli
 from fuzzy_mamdani import hitung_kesegaran_fuzzy, inisialisasi_fuzzy
 
-# Load model CNN yang sudah dilatih
-model_mata = build_cnn_model('../models/eye_model.h5')
-model_insang = build_cnn_model('../models/gill_model.h5')
+# Load model CNN dengan path langsung ke folder models/ di repositori GitHub
+model_mata = build_cnn_model('models/eye_model.h5')
+model_insang = build_cnn_model('models/gill_model.h5')
 
 # Inisialisasi objek simulasi fuzzy
 simulasi_fuzzy = inisialisasi_fuzzy()
@@ -29,9 +29,9 @@ if uploaded_mata is not None and uploaded_insang is not None:
   # Tampilkan gambar yang di-upload
   col1, col2 = st.columns(2)
   with col1:
-    st.image(uploaded_mata, caption='Foto Mata Ikan', width='stretch')
+    st.image(uploaded_mata, caption='Foto Mata Ikan', use_column_width=True)
   with col2:
-    st.image(uploaded_insang, caption='Foto Insang Ikan', width='stretch')
+    st.image(uploaded_insang, caption='Foto Insang Ikan', use_column_width=True)
 
   if st.button('Proses Analisis Kesegaran'):
     # Simpan sementara file yang di-upload
