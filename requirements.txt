@@ -1,6 +1,0 @@
-streamlit
-tensorflow
-scikit-fuzzy
-scipy
-numpy
-pillow
