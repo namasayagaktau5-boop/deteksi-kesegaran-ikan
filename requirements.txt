@@ -3,6 +3,5 @@ tensorflow
 scikit-fuzzy
 scipy
 networkx
-scikit-learn
 numpy
 pillow
